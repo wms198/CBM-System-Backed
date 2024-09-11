@@ -37,5 +37,8 @@ func main() {
 	r.PATCH("/appointment/:id", controllers.UpdateAppointment)
 	r.DELETE("/appointment/:id", controllers.DeleteAppointment)
 	r.GET("/appointment/:id", controllers.Readappointment)
+	r.POST("/signup", controllers.Signup)
+	r.POST("/login", controllers.Login)
+	r.GET("/validate", controllers.Validate)
 	r.Run()
 }
