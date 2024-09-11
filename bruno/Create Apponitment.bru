@@ -1,0 +1,19 @@
+meta {
+  name: Create Apponitment
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:3000/appointment
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "UserId": 14,
+    "Date": "2024-01-01T00:00:00Z",
+    "Explanation": "Gk"
+  }
+}

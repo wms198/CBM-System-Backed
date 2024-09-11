@@ -58,7 +58,7 @@ func UpdateUser(c *gin.Context) {
 		return
 	}
 	id := c.Param("id")
-	result := initD.DB.Model(&user).Where("ID = ?", id).Update("Firstname", user.Firstname)
+	result := initD.DB.Model(&user).Where("ID = ?", id).Updates(user)
 	if result.Error != nil {
 		log.Fatal(result.Error)
 	}
@@ -73,7 +73,7 @@ func DeleteUser(c *gin.Context) {
 	if result.Error != nil {
 		log.Fatal(result.Error)
 	}
-	c.JSON(200, user)
+	c.JSON(200, nil)
 }
 
 func ReadUser(c *gin.Context) {

@@ -26,12 +26,16 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.POST("/createUser", controllers.CreateUser)
+	r.POST("user", controllers.CreateUser)
 
 	r.GET("/users", controllers.ReadUsers)
 	r.GET("/user/:id", controllers.ReadUser)
 	r.PATCH("/user/:id", controllers.UpdateUser)
 	r.DELETE("/user/:id", controllers.DeleteUser)
-
+	r.POST("/appointment", controllers.CreateAppointment)
+	r.GET("/appointments", controllers.ReadAppointments)
+	r.PATCH("/appointment/:id", controllers.UpdateAppointment)
+	r.DELETE("/appointment/:id", controllers.DeleteAppointment)
+	r.GET("/appointment/:id", controllers.Readappointment)
 	r.Run()
 }

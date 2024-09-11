@@ -1,0 +1,17 @@
+meta {
+  name: Update appointment
+  type: http
+  seq: 9
+}
+
+patch {
+  url: http://localhost:3000/appointment/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Explanation": "...."
+  }
+}
