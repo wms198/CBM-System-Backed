@@ -1,6 +1,7 @@
 package main
 
 import (
+	"main/controllers"
 	"main/initD"
 
 	"github.com/gin-gonic/gin"
@@ -12,6 +13,11 @@ func init() {
 	initD.SyncDatabase()
 }
 
+// GET retrieves data.
+// POST creates data.
+// PUT updates data entirely.
+// PATCH allows partially updating data.
+// DELETE removes data.
 func main() {
 	r := gin.Default()
 
@@ -20,5 +26,12 @@ func main() {
 			"message": "pong",
 		})
 	})
+	r.POST("/createUser", controllers.CreateUser)
+
+	r.GET("/users", controllers.ReadUsers)
+	r.GET("/user/:id", controllers.ReadUser)
+	r.PATCH("/user/:id", controllers.UpdateUser)
+	r.DELETE("/user/:id", controllers.DeleteUser)
+
 	r.Run()
 }
