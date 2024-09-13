@@ -98,6 +98,7 @@ func Login(c *gin.Context) {
 }
 
 func Validate(c *gin.Context) {
+	println(c.Request.Header)
 	c.JSON(http.StatusOK, gin.H{
 		"message": "I'm logged in",
 	})
